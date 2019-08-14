@@ -5,19 +5,19 @@ ENV DEFAULT_ETAX_DIR eTax.zug_2018_nP
 ENV HOST_GID 1000
 ENV HOST_UID 1000
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 ENV ETAX_INSTALLER_SCRIPT eTaxInstaller.sh
 ENV ETAX_INSTALL_DIR /home/taxpayer/etax_zug
 
 RUN apt-get update && \
     apt-get install -y --no-install-suggests --no-install-recommends wget curl iputils-ping \
     gnupg2 apt-transport-https libx11-xcb1 ca-certificates \
-    ca-certificates-java libgtk-3-0 openjdk-8-jdk ant && \
+    ca-certificates-java libgtk-3-0 openjdk-11-jdk ant && \
     apt-get upgrade -y --no-install-suggests --no-install-recommends && \
     update-ca-certificates -f && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    rm -rf /var/cache/oracle-jdk8-installer
+    rm -rf /var/cache/oracle-jdk11-installer
 
 COPY entrypoint.sh /bin/entrypoint.sh
 
