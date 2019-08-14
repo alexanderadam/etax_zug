@@ -1,5 +1,8 @@
 # Docker container for eTax.zug (Linux)
 
+This is a `Dockerfile` for [eTax.zug](https://www.zg.ch/behoerden/finanzdirektion/steuerverwaltung/eTax.zug).
+
+
 You will probably need to select `/home/taxpayer/etax_zug` as the installation directory.
 Otherwise the entrypoint script might behave strange.
 For now there is a symlink from the _current_ etax default directory to it but they could change it with the next release. Maybe we could establish a more robust logic here though.
@@ -7,10 +10,18 @@ For now there is a symlink from the _current_ etax default directory to it but t
 Also you should save your tax data in `/home/taxpayer/Steuerfaelle`.
 Otherwise the data won't be persisted after you threw the container away!
 
-You should be able to run the eTax Zug by calling
+## Using the Dockerfile
+
+You can build the image by calling
 
 ```bash
-bash run.sh
+$ docker build -t etax_zug .
+```
+
+After a successful build you should be able to run eTax Zug by calling
+
+```bash
+$ bash run.sh
 ```
 
 ## Bugs
