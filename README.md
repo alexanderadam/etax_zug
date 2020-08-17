@@ -29,7 +29,7 @@ $ bash run.sh
 ### Links
 
 Because the image should be small and therefore doesn't contain a browser you can't click on links.
-Right click + copy would be nice but it seems that the folks at ifactory didn't implement this.
+Right click + copy would be nice but it seems that the folks at [Information Factory AG](https://www.information-factory.com/) didn't implement this.
 
 ## HiDPI-Displays
 

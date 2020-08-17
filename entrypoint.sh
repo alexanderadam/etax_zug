@@ -2,13 +2,8 @@
 
 set -e
 
-echo "0"
-ls -lha ./
-echo "1"
-ls -lha $ETAX_INSTALL_DIR
-echo "2"
-
-if [ ! -f $ETAX_INSTALL_DIR/uninstall ]; then
+if [ ! -f "$ETAX_INSTALL_DIR/eTax.zug ${ETAX_YEAR} nP.desktop" ]; then
+  ETAX_URL="https://etaxdownload.zg.ch/${ETAX_YEAR}/eTaxZGnP${ETAX_YEAR}_64bit.sh"
   echo "No installation was found. Downloading ${ETAX_URL} to ${ETAX_INSTALLER_SCRIPT}."
   wget -O $ETAX_INSTALLER_SCRIPT -c $ETAX_URL
   chmod 0755 $ETAX_INSTALLER_SCRIPT
