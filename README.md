@@ -41,16 +41,6 @@ No installation was found. Downloading https://etaxdownload.zg.ch/2042/eTaxZGnP2
 Because the image should be small and therefore doesn't contain a browser you can't click on links.
 Right click + copy would be nice but it seems that the folks at [Information Factory AG](https://www.information-factory.com/) didn't implement this yet.
 
-### Wayland
-
-You need to run the container with `--env=DISPLAY` and `--env=QT_X11_NO_MITSHM=1` to make it work with Wayland.
-
-```bash
-$ xhost +SI:localuser:$(id -un)
-
-$ podman run --rm -it --env=DISPLAY --env=QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/taxpayer/etax_zug:/home/taxpayer/etax_zug etax_zug
-```
-
 ## HiDPI-Displays
 
 This is a Java application. Meaning it might not work well with all of your _native_ UI settings.

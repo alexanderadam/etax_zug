@@ -2,7 +2,7 @@
 set -e
 # https://github.com/containers/podman/discussions/13040
 
-ETAX_DIR=$(pwd)/etax
+ETAX_DIR=${ETAX_DIR:-$(pwd)/etax}
 TAX_FILES_DIR=$(pwd)/tax_files
 TAXPAYER_UID=$(id -u)
 TAXPAYER_GID=$(id -g)

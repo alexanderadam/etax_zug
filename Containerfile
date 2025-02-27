@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-suggests --no-install-recommends wget curl iputils-ping \
     gnupg2 apt-transport-https libx11-xcb1 ca-certificates expect \
     ca-certificates-java libgtk-3-0 openjdk-11-jdk ant locales \
-    libwayland-client0 libwayland-cursor0 libwayland-egl1 libwayland-server0 sudo && \
+    libwayland-client0 libwayland-cursor0 libwayland-egl1 libwayland-server0 sudo unzip file && \
     apt-get upgrade -y --no-install-suggests --no-install-recommends && \
     update-ca-certificates -f && \
     apt-get clean && \
